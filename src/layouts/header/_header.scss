@@ -1,0 +1,60 @@
+.header {
+  padding-bottom: 100px;
+
+  .header__menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 16px;
+
+    .logo {
+      img {
+        width: 100px;
+      }
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      padding: 19px 0;
+
+      .navigation__link {
+        list-style-type: none;
+        padding: 0 20px;
+        font-weight: 600;
+      }
+    }
+
+    .menu__button {
+      text-decoration: none;
+      padding: 15px 0;
+      font-weight: 600;
+      color: $color-text-dark;
+      img {
+        width: 72px;
+        height: 28px;
+      }
+    }
+  }
+}
+
+.header__hero {
+  border-radius: 40px;
+  background-image: url('/assets/img/header/img-hero.jpg');
+  background-size: cover;
+}
+
+.hero__offer {
+  max-width: 530px;
+  padding: 100px 100px 101px 100px;
+}
+
+.title_accent {
+  font-style: italic;
+  color: $color-text-accent;
+}
+
+.hero__offer_content {
+  padding: 42px 0 38px;
+  color: $color-text-light;
+  line-height: 24px;
+}

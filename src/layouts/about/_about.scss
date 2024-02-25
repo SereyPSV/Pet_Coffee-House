@@ -1,0 +1,55 @@
+.about {
+  padding-bottom: 100px;
+
+  .about__title {
+    padding-bottom: 40px;
+  }
+
+  .wrapper__about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .about__images {
+      display: flex;
+      justify-content: space-between;
+      width: 1360px;
+
+      div {
+        border-radius: 20px;
+      }
+
+      .colum_first {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        .aboutImg_1 {
+          width: 660px;
+          height: 590px;
+        }
+
+        .aboutImg_2 {
+          width: 660px;
+          height: 430px;
+        }
+      }
+
+      .colum_second {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        .aboutImg_3 {
+          width: 660px;
+          height: 430px;
+        }
+
+        .aboutImg_4 {
+          width: 660px;
+          height: 590px;
+        }
+      }
+    }
+  }
+}
