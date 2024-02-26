@@ -1,0 +1,57 @@
+.mobile-app {
+  padding-bottom: 100px;
+
+  .wrapper__mobile-app {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+    .mobile-app__offer {
+      display: flex;
+      flex-direction: column;
+      width: 630px;
+
+      .offer__title {
+        // -----------h2
+        .title_accent {
+        }
+        .offer__title_span {
+        }
+      }
+      .offer__text {
+        margin: 40px 0;
+      }
+      .offer__buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 420px;
+
+        .btn__app-store {
+          display: flex;
+          align-items: center;
+          border: 1px solid $color-border-dark;
+
+          & > img:first-child {
+            padding: 0 8px 0 13px;
+          }
+        }
+        .btn__google-play {
+          display: flex;
+          align-items: center;
+          border: 1px solid $color-border-dark;
+
+          & > img:first-child {
+            padding: 0 8px 0 13px;
+          }
+        }
+      }
+    }
+
+    .mobile-app__screens {
+      display: flex;
+      width: 630px;
+      height: 630px;
+    }
+  }
+}

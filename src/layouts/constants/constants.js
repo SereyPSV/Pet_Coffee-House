@@ -9,3 +9,6 @@ export const SLIDE_DESCRIPTION =
 // eslint-disable-next-line operator-linebreak
 export const ABOUT_TITLE =
   'where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.';
+// eslint-disable-next-line operator-linebreak
+export const MOBILE_APP_TEXT =
+  'Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are';

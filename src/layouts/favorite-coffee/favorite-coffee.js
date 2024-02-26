@@ -1,11 +1,11 @@
-import urlCoffeeSlide_1 from '../../assets/img/favoriteCoffee/coffee-slider-1.png';
-import urlCoffeeSlide_2 from '../../assets/img/favoriteCoffee/coffee-slider-2.png';
-import urlCoffeeSlide_3 from '../../assets/img/favoriteCoffee/coffee-slider-3.png';
-import urlControl from '../../assets/img/favoriteCoffee/control.svg';
-import urlControlDark from '../../assets/img/favoriteCoffee/controlDark.svg';
+import urlCoffeeSlide_1 from '../../assets/img/favorite-coffee/coffee-slider-1.png';
+import urlCoffeeSlide_2 from '../../assets/img/favorite-coffee/coffee-slider-2.png';
+import urlCoffeeSlide_3 from '../../assets/img/favorite-coffee/coffee-slider-3.png';
+import urlControl from '../../assets/img/favorite-coffee/control.svg';
+import urlControlDark from '../../assets/img/favorite-coffee/controlDark.svg';
 import { SLIDE_DESCRIPTION } from '../constants/constants';
 
-export const favoriteCoffee = (body) => {
+export const favoriteCoffeeBlock = (body) => {
   const favoriteCoffee = document.createElement('section');
   const favoriteCoffeeWrapper = document.createElement('div');
   const favoriteCoffeeTitle = document.createElement('div'); // --title

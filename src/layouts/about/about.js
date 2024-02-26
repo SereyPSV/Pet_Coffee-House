@@ -4,7 +4,7 @@ import urlAboutImg_3 from '../../assets/img/about/about-3.jpg';
 import urlAboutImg_4 from '../../assets/img/about/about-4.jpg';
 import { ABOUT_TITLE } from '../constants/constants';
 
-export function about(body) {
+export function aboutBlock(body) {
   const about = document.createElement('section');
   const wrapperAbout = document.createElement('div');
   const aboutTitle = document.createElement('div');

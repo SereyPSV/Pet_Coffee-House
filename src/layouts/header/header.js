@@ -42,7 +42,7 @@ export const headerBlock = (body) => {
   heroOffer.className = 'hero__offer';
   heroOfferTitle.className = 'hero__offer_title';
   titleSpanAccent.className = 'title_accent';
-  titleSpanAccent.textContent = 'Enjoy';
+  titleSpanAccent.textContent = 'Enjoy ';
   titleSpan.textContent = 'premium coffee at our charming cafe';
   heroOfferContent.className = 'hero__offer_content';
   heroOfferSpanContent.textContent = HERO_CONTENT;
