@@ -3,10 +3,31 @@
 //----------CONSTANTS-------
 @import './layouts/constants/constants';
 
+@import './layouts/header/header';
+@import './layouts/menu/menu';
+@import './layouts/hero/hero';
+// Layouts
+@import './layouts/favorite-coffee/favorite-coffee';
+@import './layouts/about/about';
+@import './layouts/mobile-app/mobile-app';
+@import './layouts/footer/footer';
+
+.wrapper {
+  background-color: $color-background-body;
+  max-width: 1360px;
+  margin: auto;
+}
+
+.title_accent {
+  font-style: italic;
+  color: $color-text-accent;
+}
+
 //----------BASE----------
 html {
   font-size: 10px;
   background-color: $color-background-html;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,6 +37,10 @@ body {
   background-color: $color-background-body;
   opacity: 100%;
   margin: auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
@@ -71,53 +96,26 @@ ul {
 }
 
 //----------BATONS----------
-.buttons {
-  width: 200px;
-  height: 64px;
-  background-color: $color-background-body;
-  border: 1px solid $color-background-body;
-  border-radius: 32px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.button__icon-dark {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  background-color: $color-background-body;
-  border: 1px solid $color-border-dark;
-  border-radius: 50%;
-
-  .vector_left {
-    width: 24px;
-    height: 24px;
-    background: url('/assets/icons/vector-left.svg') no-repeat center;
-  }
-
-  .vector_right {
-    width: 24px;
-    height: 24px;
-    background: url('/assets/icons/vector-right.svg') no-repeat center;
+button {
+  &:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
 }
 
-// Layouts
-.wrapper {
-  background-color: $color-background-body;
-  max-width: 1360px;
-  margin: auto;
-}
-
-.title_accent {
-  font-style: italic;
-  color: $color-text-accent;
-}
-
-@import './layouts/header/header';
-@import './layouts/favorite-coffee/favorite-coffee';
-@import './layouts/about/about';
-@import './layouts/mobile-app/mobile-app';
-@import './layouts/footer/footer';
+// .buttons_negative {
+//   background-color: $color-background-body;
+//   border: 1px solid $color-border-dark;
+//   transition: all 0.3s ease;
+//   path {
+//     stroke: $color-text-dark;
+//   }
+//   &:hover {
+//     background-color: $color-background-container;
+//     border: 1px solid $color-border-dark;
+//     cursor: pointer;
+//     path {
+//       stroke: $color-text-light;
+//     }
+//   }
+// }

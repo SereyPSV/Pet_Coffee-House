@@ -1,20 +1,14 @@
-import urlIconAppStore from '../../assets/img/mobile-app/icon-app-store.svg';
-import urlTextAppStore from '../../assets/img/mobile-app/text-app-store.svg';
-import urlIconGooglePlay from '../../assets/img/mobile-app/icon-google-play.svg';
-import urlTextGooglePlay from '../../assets/img/mobile-app/text-google-play.svg';
-import urlMobileAppScreensImg from '../../assets/img/mobile-app/mobile-screens.png';
+import urlMobileAppScreensImg from './img/mobile-screens.png';
 import { MOBILE_APP_TEXT } from '../constants/constants';
+import { insertSvg } from '../../utils/insert-svg';
+import {
+  iconAppStore,
+  iconGooglePlay,
+  textAppStore,
+  textGooglePlay,
+} from './utils/mobile-app-svg';
 
-const iconAppStore = new Image();
-const textAppStore = new Image();
-const iconGooglePlay = new Image();
-const textGooglePlay = new Image();
-iconAppStore.src = urlIconAppStore;
-textAppStore.src = urlTextAppStore;
-iconGooglePlay.src = urlIconGooglePlay;
-textGooglePlay.src = urlTextGooglePlay;
-
-export function mobileAppBlock(body) {
+export const mobileAppBlock = (body) => {
   const mobileApp = document.createElement('section');
   const wrapperMobileApp = document.createElement('div');
   const mobileAppOffer = document.createElement('div');
@@ -23,11 +17,19 @@ export function mobileAppBlock(body) {
   const offerButtons = document.createElement('div');
   const offerTitleAccent = document.createElement('span');
   const offerTitleSpan = document.createElement('span');
+
+  const linkAppStore = document.createElement('a');
   const buttonAppStore = document.createElement('button');
+  const linkGooglePlay = document.createElement('a');
   const buttonGooglePlay = document.createElement('button');
   const mobileAppScreens = document.createElement('div');
+  insertSvg(textAppStore, buttonAppStore);
+  insertSvg(iconAppStore, buttonAppStore);
+  insertSvg(textGooglePlay, buttonGooglePlay);
+  insertSvg(iconGooglePlay, buttonGooglePlay);
 
   mobileApp.className = 'mobile-app';
+  mobileApp.id = 'mobile-app';
   wrapperMobileApp.className = 'wrapper wrapper__mobile-app';
   mobileAppOffer.className = 'mobile-app__offer';
   offerTitle.className = 'offer__title';
@@ -38,19 +40,20 @@ export function mobileAppBlock(body) {
   offerTitleSpan.className = 'offer__title_span';
   offerTitleSpan.textContent = 'our apps to start ordering';
   offerText.textContent = MOBILE_APP_TEXT;
-  buttonAppStore.className = 'buttons btn__app-store';
-  buttonGooglePlay.className = 'buttons btn__google-play';
+  linkAppStore.href = 'https://www.apple.com/app-store/';
+  buttonAppStore.className = 'buttons_negative btn__app-store';
+  linkGooglePlay.href = 'https://play.google.com/store/games?hl=ru&gl=US';
+  buttonGooglePlay.className = 'buttons_negative btn__google-play';
   mobileAppScreens.className = 'mobile-app__screens';
   mobileAppScreens.style.background = `url(${urlMobileAppScreensImg}) center`;
 
   offerTitle.append(offerTitleAccent, offerTitleSpan);
-
-  buttonAppStore.append(iconAppStore, textAppStore);
-  buttonGooglePlay.append(iconGooglePlay, textGooglePlay);
-  offerButtons.append(buttonAppStore, buttonGooglePlay);
+  linkAppStore.append(buttonAppStore);
+  linkGooglePlay.append(buttonGooglePlay);
+  offerButtons.append(linkAppStore, linkGooglePlay);
 
   mobileAppOffer.append(offerTitle, offerText, offerButtons);
   wrapperMobileApp.append(mobileAppOffer, mobileAppScreens);
   mobileApp.append(wrapperMobileApp);
-  body.append(mobileApp);
-}
+  return mobileApp;
+};

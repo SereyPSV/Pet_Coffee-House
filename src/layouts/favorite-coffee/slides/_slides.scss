@@ -1,0 +1,73 @@
+@import './slide-block/slide-block';
+
+.slider__row {
+  display: flex;
+  width: 1152px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider__line {
+  display: flex;
+  width: 1152px;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  transition: all ease 0.5s;
+}
+
+// --slider
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-background-body;
+    border: 1px solid $color-border-dark;
+
+    transition:
+      box-shadow 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99),
+      transform 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99);
+
+    &:hover {
+      background-color: $color-background-container;
+      border: 1px solid $color-border-dark;
+      box-shadow:
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        2px 6px 6px rgba(0, 0, 0, 0.15),
+        3px 9px 9px rgba(0, 0, 0, 0.15);
+      transform: scale(1.02) translateY(-1px);
+      path {
+        stroke: $color-text-light;
+        transition: all 0.3s ease;
+      }
+    }
+
+    &:disabled {
+      cursor: default;
+      background-color: $color-background-body;
+      opacity: 0.3;
+      path {
+        stroke: $color-text-dark;
+      }
+    }
+  }
+}
+
+// --slider control
+.slider__controls {
+  display: flex;
+  justify-content: space-between;
+  width: 144px;
+}

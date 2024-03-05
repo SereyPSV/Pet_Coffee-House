@@ -22,7 +22,7 @@ footer {
         display: flex;
         justify-content: space-between;
         width: 204px;
-        button {
+        .button__socials {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -31,11 +31,21 @@ footer {
           background-color: $color-background-container;
           border: 1px solid $color-border-light;
           border-radius: 50%;
-
-          span {
-            width: 20px;
-            height: 20px;
-            color: $color-text-light;
+          transition: all 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99);
+          &:hover {
+            background-color: $color-background-body;
+            box-shadow:
+              0 2px 2px rgba(0, 0, 0, 0.1),
+              0 1px 3px rgba(0, 0, 0, 0.05),
+              0 2px 2px rgba(0, 0, 0, 0.1),
+              0 4px 4px rgba(0, 0, 0, 0.1),
+              2px 6px 6px rgba(0, 0, 0, 0.15),
+              3px 9px 9px rgba(0, 0, 0, 0.15);
+            transform: scale(1.02) translateY(-1px);
+            path {
+              stroke: $color-text-dark;
+              transition: all 0.5s cubic-bezier(0.33, 0.11, 0.02, 0.99);
+            }
           }
         }
       }
@@ -52,18 +62,29 @@ footer {
       }
 
       .contact-info {
+        padding-bottom: 20px;
         display: flex;
-        padding-bottom: 25px;
-      }
-      .contact-info_last {
-        display: flex;
-      }
-
-      span {
-        width: 20px;
-        height: 20px;
-        padding-right: 20px;
-        color: $color-text-light;
+        align-items: center;
+        span {
+          line-height: 20px;
+          padding-bottom: 5px;
+          border-bottom: 2px solid $color-background-container;
+          transition: all 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99);
+        }
+        svg {
+          padding: 0 10px 5px 0;
+          border-bottom: 2px solid $color-background-container;
+          transition: all 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99);
+        }
+        &:hover {
+          cursor: pointer;
+          svg {
+            border-bottom: 2px solid $color-background-body;
+          }
+          span {
+            border-bottom: 2px solid $color-background-body;
+          }
+        }
       }
     }
   }

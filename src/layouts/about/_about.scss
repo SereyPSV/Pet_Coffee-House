@@ -12,43 +12,45 @@
 
     .about__images {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 40px;
       width: 1360px;
+      height: 1060px;
 
       div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 20px;
-      }
-
-      .colum_first {
-        display: flex;
-        flex-direction: column;
-        row-gap: 40px;
-
-        .aboutImg_1 {
-          width: 660px;
-          height: 590px;
-        }
-
-        .aboutImg_2 {
-          width: 660px;
-          height: 430px;
+        overflow: hidden;
+        img {
+          object-fit: cover;
+          object-position: center;
+          transition: 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99);
+          &:hover {
+            scale: 0.9;
+          }
         }
       }
+      .aboutImg_1 {
+        width: 660px;
+        height: 590px;
+      }
 
-      .colum_second {
-        display: flex;
-        flex-direction: column;
-        row-gap: 40px;
+      .aboutImg_2 {
+        width: 660px;
+        height: 430px;
+      }
 
-        .aboutImg_3 {
-          width: 660px;
-          height: 430px;
-        }
+      .aboutImg_3 {
+        width: 660px;
+        height: 430px;
+      }
 
-        .aboutImg_4 {
-          width: 660px;
-          height: 590px;
-        }
+      .aboutImg_4 {
+        width: 660px;
+        height: 590px;
       }
     }
   }

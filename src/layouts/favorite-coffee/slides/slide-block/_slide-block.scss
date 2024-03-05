@@ -1,0 +1,28 @@
+.slide__container {
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-out 0.5s;
+
+  .slide__content {
+    padding-top: 40px;
+
+    img {
+      width: 480px;
+    }
+  }
+
+  .slide-description__title {
+    padding: 15px 0 16px;
+  }
+  .slide-description__price {
+    padding: 16px 0 40px;
+  }
+}
+
+.slide_hidden {
+  opacity: 0;
+  scale: 0.3;
+}

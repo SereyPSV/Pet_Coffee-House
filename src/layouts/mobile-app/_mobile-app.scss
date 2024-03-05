@@ -12,13 +12,6 @@
       flex-direction: column;
       width: 630px;
 
-      .offer__title {
-        // -----------h2
-        .title_accent {
-        }
-        .offer__title_span {
-        }
-      }
       .offer__text {
         margin: 40px 0;
       }
@@ -27,22 +20,40 @@
         justify-content: space-between;
         width: 420px;
 
-        .btn__app-store {
+        button {
           display: flex;
           align-items: center;
+          width: 200px;
+          height: 64px;
           border: 1px solid $color-border-dark;
+          border-radius: 32px;
+          background-color: $color-background-body;
+          transition:
+            box-shadow 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99),
+            transform 0.3s cubic-bezier(0.33, 0.11, 0.02, 0.99);
 
-          & > img:first-child {
+          svg {
             padding: 0 8px 0 13px;
+
+            path {
+              transition: all ease 0.2s;
+              fill: $color-text-dark;
+            }
           }
-        }
-        .btn__google-play {
-          display: flex;
-          align-items: center;
-          border: 1px solid $color-border-dark;
 
-          & > img:first-child {
-            padding: 0 8px 0 13px;
+          &:hover {
+            box-shadow:
+              0 2px 2px rgba(0, 0, 0, 0.1),
+              0 1px 3px rgba(0, 0, 0, 0.05),
+              0 4px 4px rgba(0, 0, 0, 0.1),
+              0 8px 8px rgba(0, 0, 0, 0.1),
+              4px 16px 16px rgba(0, 0, 0, 0.15),
+              4px 32px 32px rgba(0, 0, 0, 0.15);
+            transform: scale(1.02) translateY(-1px);
+            background-color: $color-background-container;
+            path {
+              fill: $color-text-light;
+            }
           }
         }
       }

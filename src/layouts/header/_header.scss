@@ -1,55 +1,55 @@
 .header {
-  padding-bottom: 100px;
-
   .header__menu {
     display: flex;
     justify-content: space-between;
     padding: 20px 0 16px;
 
     .logo {
-      img {
-        width: 100px;
-      }
-    }
+      width: 100px;
+      transition: transform 0.2s cubic-bezier(0.33, 0.11, 0.02, 0.99);
 
-    .navigation {
-      display: flex;
-      justify-content: space-between;
-      padding: 19px 0;
-
-      .navigation__link {
-        list-style-type: none;
-        padding: 0 20px;
-        font-weight: 600;
-      }
-    }
-
-    .menu__button {
-      text-decoration: none;
-      padding: 15px 0;
-      font-weight: 600;
-      color: $color-text-dark;
-      img {
-        width: 72px;
-        height: 28px;
+      &:hover {
+        transform: scale(1.06);
       }
     }
   }
-}
 
-.header__hero {
-  border-radius: 40px;
-  background-image: url('/assets/img/header/img-hero.jpg');
-  background-size: cover;
-}
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
 
-.hero__offer {
-  max-width: 530px;
-  padding: 100px 100px 101px 100px;
-}
+    .navigation__link {
+      list-style-type: none;
+      padding: 0 20px;
+      font-weight: 600;
+      color: $color-text-dark;
+      text-decoration: underline 2px $color-background-body;
+      text-underline-offset: 8px;
+      transition: all 0.3s ease;
 
-.hero__offer_content {
-  padding: 42px 0 38px;
-  color: $color-text-light;
-  line-height: 24px;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline 2px $color-text-dark;
+        text-underline-offset: 8px;
+      }
+    }
+  }
+
+  .menu__button {
+    padding: 16px 0;
+    font-weight: 600;
+    color: $color-text-dark;
+    svg {
+      line {
+        transition: all 0.3s ease;
+        opacity: 0;
+      }
+    }
+    svg:hover {
+      line {
+        opacity: 1;
+      }
+    }
+  }
 }

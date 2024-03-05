@@ -1,11 +1,7 @@
-import urlIconTwitter from '../../assets/img/footer/twitter.svg';
-import urlIconInstagram from '../../assets/img/footer/instagram.svg';
-import urlIconFacebook from '../../assets/img/footer/facebook.svg';
-import urlIconPinAlt from '../../assets/img/footer/pin-alt.svg';
-import urlIconPhone from '../../assets/img/footer/phone.svg';
-import urlIconClock from '../../assets/img/footer/clock.svg';
+import { insertSvg } from '../../utils/insert-svg';
+import { clock, facebook, instagram, phone, pinAlt, twitter } from './utils/svg';
 
-export function footerBlock(body) {
+export const footerBlock = () => {
   const footer = document.createElement('footer');
   const footerWrapper = document.createElement('div');
 
@@ -14,23 +10,21 @@ export function footerBlock(body) {
   const offerSocials = document.createElement('div');
   const offerTitleAccent = document.createElement('span');
   const offerTitleSpan = document.createElement('span');
-  const offerSocialsTwitter = document.createElement('button');
-  const offerSocialsInstagram = document.createElement('button');
-  const offerSocialsFacebook = document.createElement('button');
-  const twitterIcon = document.createElement('span');
-  const instagramIcon = document.createElement('span');
-  const facebookIcon = document.createElement('span');
+  const offerButtonTwitter = document.createElement('a');
+  const offerButtonInstagram = document.createElement('a');
+  const offerButtonFacebook = document.createElement('a');
 
   const contactsInfo = document.createElement('div');
   const contactsInfoTitle = document.createElement('h3');
-  const contactsInfoPinAlt = document.createElement('div');
-  const contactsInfoPhone = document.createElement('div');
-  const contactsInfoClock = document.createElement('div');
+  const contactsInfoPinAlt = document.createElement('a');
+  const contactsInfoPhone = document.createElement('a');
+  const contactsInfoClock = document.createElement('a');
   const pinAltSpan = document.createElement('span');
   const phoneSpan = document.createElement('span');
   const clockSpan = document.createElement('span');
 
   footer.className = 'footer';
+  footer.id = 'contact-us';
   footerWrapper.className = 'wrapper footer__wrapper';
 
   footerOffer.className = 'footer__offer';
@@ -40,29 +34,38 @@ export function footerBlock(body) {
   offerTitleAccent.textContent = 'Sip, Savor, Smile.';
   offerTitleSpan.className = 'title_accent';
   offerTitleSpan.textContent = ' It’s coffee time!';
-  twitterIcon.style.background = `url(${urlIconTwitter}) no-repeat center`;
-  instagramIcon.style.background = `url(${urlIconInstagram}) no-repeat center`;
-  facebookIcon.style.background = `url(${urlIconFacebook}) no-repeat center`;
+
+  offerButtonTwitter.className = 'button__socials button__twitter';
+  offerButtonTwitter.href = 'https://twitter.com/?lang=ru';
+  offerButtonInstagram.className = 'button__socials button__instagram';
+  offerButtonInstagram.href = 'https://www.instagram.com/';
+  offerButtonFacebook.className = 'button__socials button__facebook';
+  offerButtonFacebook.href = 'https://twitter.com/?lang=ru';
 
   contactsInfo.className = 'footer__contact-info';
   contactsInfoTitle.className = 'contacts-info__title';
   contactsInfoTitle.textContent = 'Contact us';
   contactsInfoPinAlt.className = 'contact-info';
+  pinAltSpan.textContent = '8558 Green Rd., LA';
   contactsInfoPhone.className = 'contact-info';
+  phoneSpan.textContent = '+1 (603) 555-0123)';
   contactsInfoClock.className = 'contact-info_last';
-  pinAltSpan.style.background = `url(${urlIconPinAlt}) no-repeat center`;
-  phoneSpan.style.background = `url(${urlIconPhone}) no-repeat center`;
-  clockSpan.style.background = `url(${urlIconClock}) no-repeat center`;
+  clockSpan.textContent = 'Mon-Sat: 9:00 AM – 23:00 PM';
+
+  insertSvg(twitter, offerButtonTwitter);
+  insertSvg(instagram, offerButtonInstagram);
+  insertSvg(facebook, offerButtonFacebook);
+
+  insertSvg(pinAlt, contactsInfoPinAlt);
+  insertSvg(phone, contactsInfoPhone);
+  insertSvg(clock, contactsInfoClock);
 
   offerTitle.append(offerTitleAccent, offerTitleSpan);
-  offerSocialsTwitter.append(twitterIcon);
-  offerSocialsInstagram.append(instagramIcon);
-  offerSocialsFacebook.append(facebookIcon);
-  offerSocials.append(offerSocialsTwitter, offerSocialsInstagram, offerSocialsFacebook);
+  offerSocials.append(offerButtonTwitter, offerButtonInstagram, offerButtonFacebook);
   footerOffer.append(offerTitle, offerSocials);
-  contactsInfoPinAlt.append(pinAltSpan, '8558 Green Rd., LA');
-  contactsInfoPhone.append(phoneSpan, '+1 (603) 555-0123');
-  contactsInfoClock.append(clockSpan, 'Mon-Sat: 9:00 AM – 23:00 PM');
+  contactsInfoPinAlt.append(pinAltSpan);
+  contactsInfoPhone.append(phoneSpan);
+  contactsInfoClock.append(clockSpan);
   contactsInfo.append(
     contactsInfoTitle,
     contactsInfoPinAlt,
@@ -71,5 +74,5 @@ export function footerBlock(body) {
   );
   footerWrapper.append(footerOffer, contactsInfo);
   footer.append(footerWrapper);
-  body.append(footer);
-}
+  return footer;
+};
